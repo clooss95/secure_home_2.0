@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.bonacode.securehome.ui.feature.main.home.HomeFragment"
+        android:label="@string/home_title"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addToFavouriteFragment"
+            app:destination="@id/addToFavouriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/controlPanelMainFragment"
+        android:name="com.bonacode.securehome.ui.feature.main.controlpanel.ControlPanelMainFragment"
+        android:label="@string/control_panel_title"
+        tools:layout="@layout/fragment_control_panel_main" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.bonacode.securehome.ui.feature.main.settings.SettingsFragment"
+        android:label="@string/settings_title"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/actionHistoryFragment"
+        android:name="com.bonacode.securehome.ui.feature.main.actionHistory.ActionHistoryFragment"
+        android:label="@string/action_history_title"
+        tools:layout="@layout/fragment_action_history" />
+
+    <fragment
+        android:id="@+id/addToFavouriteFragment"
+        android:name="com.bonacode.securehome.ui.feature.main.home.addtofavourite.AddToFavouriteFragment"
+        android:label="@string/add_favourite_action_title"
+        tools:layout="@layout/fragment_add_to_favourite" />
+
+</navigation>

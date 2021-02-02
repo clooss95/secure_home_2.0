@@ -1,24 +1,49 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SecureHome" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.SecureHome" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primary_dark</item>
-        <item name="colorOnPrimary">@color/primary_light</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorTextLight">@color/colorTextLight</item>
+        <item name="colorTextLight2">@color/colorTextLight2</item>
+        <item name="colorTextDark">@color/colorTextDark</item>
+        <item name="colorTextDark2">@color/colorTextDark2</item>
+
+        <item name="colorBackground">@color/colorBackground</item>
+
+        <item name="colorButtonPrimaryBackground">@color/colorButtonPrimaryBackground</item>
+        <item name="colorButtonPrimaryBackgroundDisabled">@color/colorButtonPrimaryBackgroundDisabled</item>
+        <item name="colorButtonPrimaryText">@color/colorButtonPrimaryText</item>
+        <item name="colorButtonPrimaryTextDisabled">@color/colorButtonPrimaryTextDisabled</item>
+
+        <item name="colorFlatButtonText">@color/colorFlatButtonText</item>
+
+        <item name="colorIconAccent">@color/colorIconAccent</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryDark</item>
+        <item name="android:windowBackground">?colorBackground</item>
+
+        <item name="md_color_title">?colorTextDark</item>
+        <item name="md_color_content">?colorTextDark</item>
+        <item name="md_color_button_text">?colorFlatButtonText</item>
+
+        <item name="textAppearanceHeader">@style/TextAppearance.Header</item>
+        <item name="textAppearanceNavigationItem">@style/TextAppearance.NavigationItem</item>
+        <item name="textAppearanceBody">@style/TextAppearance.Body</item>
+        <item name="textAppearanceInput">@style/TextAppearance.Input</item>
+        <item name="textAppearanceFooter">@style/TextAppearance.Footer</item>
+        <item name="textAppearanceButtonPrimary">@style/TextAppearance.ButtonPrimary</item>
+        <item name="textAppearanceButtonAction">@style/TextAppearance.ButtonAction</item>
+        <item name="textAppearanceExpandableHeader">@style/TextAppearance.ExpandableHeader</item>
+        <item name="textAppearanceButtonFlat">@style/TextAppearance.ButtonFlat</item>
+        <item name="textAppearanceListItemHeadline">@style/TextAppearance.TextListItemHeadline</item>
+        <item name="textAppearanceListItemLine">@style/TextAppearance.TextListItemLine</item>
+        <item name="textAppearanceTiny">@style/TextAppearance.TextTiny</item>
     </style>
 
-    <style name="Theme.SecureHome.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primary_dark</item>
-        <item name="colorOnPrimary">@color/primary_light</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-    </style>
-
-    <style name="Theme.SecureHome.Splash" parent="Theme.SecureHome.NoActionBar">
+    <style name="Theme.SecureHome.Splash" parent="Theme.SecureHome">
 
     </style>
 </resources>

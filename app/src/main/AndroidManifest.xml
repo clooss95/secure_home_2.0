@@ -3,6 +3,8 @@
     package="com.bonacode.securehome"
     >
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:name=".application.SecureHomeApplication"
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:theme="@style/Theme.SecureHome"
         >
         <activity
-            android:name=".feature.splash.SplashActivity"
+            android:name="com.bonacode.securehome.ui.feature.splash.SplashActivity"
             android:theme="@style/Theme.SecureHome.Splash"
             >
             <intent-filter>
@@ -23,9 +25,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.setup.SetupActivity"
-            android:theme="@style/Theme.SecureHome.NoActionBar"
+            android:name="com.bonacode.securehome.ui.feature.setup.SetupActivity"
             />
+
+        <activity
+            android:name="com.bonacode.securehome.ui.feature.main.activity.MainActivity"
+            />
+
     </application>
 
 </manifest>

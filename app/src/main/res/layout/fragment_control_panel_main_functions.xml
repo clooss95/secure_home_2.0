@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bonacode.securehome.ui.feature.main.controlpanel.mainfunctions.ControlPanelMainFunctionsViewModel"
+            />
+    </data>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <com.bonacode.securehome.ui.views.ButtonAction
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.startAlarmNormal()}"
+                app:buttonActionIcon="@drawable/ic_lock_simple"
+                app:buttonActionLabel="@string/sms_action_type_start_alarm"
+                />
+
+            <com.bonacode.securehome.ui.views.ButtonAction
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.stopAlarm()}"
+                app:buttonActionIcon="@drawable/ic_unlock"
+                app:buttonActionLabel="@string/sms_action_type_stop_alarm"
+                />
+
+            <com.bonacode.securehome.ui.views.ButtonAction
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.startAlarmHome()}"
+                app:buttonActionIcon="@drawable/ic_lock_simple"
+                app:buttonActionLabel="@string/sms_action_type_start_alarm_home"
+                />
+
+            <com.bonacode.securehome.ui.views.ButtonAction
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.startAlarmGroup()}"
+                app:buttonActionIcon="@drawable/ic_lock_simple"
+                app:buttonActionLabel="@string/sms_action_type_start_alarm_group"
+                />
+        </LinearLayout>
+
+</layout>

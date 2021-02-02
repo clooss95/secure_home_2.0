@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ButtonAction">
+        <attr name="buttonActionIcon" format="reference" />
+        <attr name="buttonActionLabel" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableControlPanelHeaderView">
+        <attr name="expandableHeaderTitle" format="reference" />
+        <attr name="expandableHeaderIcon" format="reference" />
+        <attr name="expandableHeaderShowSeparator" format="boolean" />
+    </declare-styleable>
+
+    <attr name="colorTextLight" format="reference"/>
+    <attr name="colorTextLight2" format="reference"/>
+
+    <attr name="colorTextDark" format="reference"/>
+    <attr name="colorTextDark2" format="reference"/>
+
+    <attr name="colorBackground" format="reference"/>
+    <attr name="colorGrey" format="reference"/>
+
+    <attr name="colorButtonPrimaryBackground" format="reference"/>
+    <attr name="colorButtonPrimaryBackgroundDisabled" format="reference"/>
+    <attr name="colorButtonPrimaryText" format="reference"/>
+    <attr name="colorButtonPrimaryTextDisabled" format="reference"/>
+
+    <attr name="colorFlatButtonText" format="reference"/>
+
+    <attr name="colorIconAccent" format="reference"/>
+
+    <attr name="textAppearanceHeader" format="reference" />
+    <attr name="textAppearanceNavigationItem" format="reference" />
+    <attr name="textAppearanceBody" format="reference" />
+    <attr name="textAppearanceInput" format="reference" />
+    <attr name="textAppearanceFooter" format="reference" />
+    <attr name="textAppearanceButtonPrimary" format="reference" />
+    <attr name="textAppearanceButtonAction" format="reference" />
+    <attr name="textAppearanceExpandableHeader" format="reference" />
+    <attr name="textAppearanceButtonFlat" format="reference" />
+    <attr name="textAppearanceListItemHeadline" format="reference" />
+    <attr name="textAppearanceListItemLine" format="reference" />
+    <attr name="textAppearanceTiny" format="reference" />
+</resources>

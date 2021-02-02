@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bonacode.securehome.ui.feature.main.controlpanel.ControlPanelMainViewModel"
+            />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <com.bonacode.securehome.ui.views.ExpandableControlPanelView
+                android:id="@+id/mainFunctionsExpandableControlPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.bonacode.securehome.ui.views.ExpandableControlPanelHeaderView
+                    android:id="@+id/mainFunctionsExpandableControlPanelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expandableHeaderShowSeparator="false"
+                    app:expandableHeaderTitle="@string/control_panel_main_functions"
+                    />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/mainFunctionsExpandableControlPanelBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="true"
+                    >
+
+                    <FrameLayout
+                        android:id="@+id/controlPanelMainFunctionsFragmentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </com.bonacode.securehome.ui.views.ExpandableControlPanelView>
+
+            <com.bonacode.securehome.ui.views.ExpandableControlPanelView
+                android:id="@+id/partitionFunctionsExpandableControlPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.bonacode.securehome.ui.views.ExpandableControlPanelHeaderView
+                    android:id="@+id/partitionFunctionsExpandableControlPanelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expandableHeaderShowSeparator="true"
+                    app:expandableHeaderTitle="@string/control_panel_partition_functions"
+                    />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/partitionFunctionsExpandableControlPanelBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    >
+
+                    <FrameLayout
+                        android:id="@+id/controlPanelPartitionFunctionsFragmentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </com.bonacode.securehome.ui.views.ExpandableControlPanelView>
+
+            <com.bonacode.securehome.ui.views.ExpandableControlPanelView
+                android:id="@+id/lineFunctionsExpandableControlPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.bonacode.securehome.ui.views.ExpandableControlPanelHeaderView
+                    android:id="@+id/lineFunctionsExpandableControlPanelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expandableHeaderShowSeparator="true"
+                    app:expandableHeaderTitle="@string/control_panel_line_functions"
+                    />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/lineFunctionsExpandableControlPanelBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    >
+
+                    <FrameLayout
+                        android:id="@+id/controlPanelLineFunctionsFragmentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </com.bonacode.securehome.ui.views.ExpandableControlPanelView>
+
+            <com.bonacode.securehome.ui.views.ExpandableControlPanelView
+                android:id="@+id/entryFunctionsExpandableControlPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.bonacode.securehome.ui.views.ExpandableControlPanelHeaderView
+                    android:id="@+id/entryFunctionsExpandableControlPanelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expandableHeaderShowSeparator="true"
+                    app:expandableHeaderTitle="@string/control_panel_entry_functions"
+                    />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/entryFunctionsExpandableControlPanelBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    >
+
+                    <FrameLayout
+                        android:id="@+id/controlPanelEntryFunctionsFragmentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </com.bonacode.securehome.ui.views.ExpandableControlPanelView>
+
+            <com.bonacode.securehome.ui.views.ExpandableControlPanelView
+                android:id="@+id/systemFunctionsExpandableControlPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.bonacode.securehome.ui.views.ExpandableControlPanelHeaderView
+                    android:id="@+id/systemFunctionsExpandableControlPanelHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expandableHeaderShowSeparator="true"
+                    app:expandableHeaderTitle="@string/control_panel_system_functions"
+                    />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/systemFunctionsExpandableControlPanelBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_expanded="false"
+                    >
+
+                    <FrameLayout
+                        android:id="@+id/controlPanelSystemFunctionsFragmentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </com.bonacode.securehome.ui.views.ExpandableControlPanelView>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

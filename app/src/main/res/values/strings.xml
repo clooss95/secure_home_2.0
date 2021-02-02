@@ -1,3 +1,104 @@
 <resources>
+    <!--    Common    -->
     <string name="app_name">Secure Home</string>
+    <string name="ok">Ok</string>
+    <string name="action_sent_success">Action sent</string>
+    <string name="action_sent_failure">Action sent failure. Missing permissions.</string>
+    <string name="action_sent_failure_navigate_to_permissions">Navigate to settings</string>
+    <string name="add_to_favourite">Add to favourite</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="powered_by">Powered by</string>
+
+    <!--    Setup     -->
+    <string name="setup_intro_welcome_text">Welcome in Secure Home Application</string>
+    <string name="setup_intro_info_text">We invite you to a short configuration process that will enable you to use the application.</string>
+    <string name="setup_intro_works_only_with">This application work only with Risco LightSYS alarm.</string>
+    <string name="setup_intro_button_start_configuration">Start configuration</string>
+
+    <string name="setup_enter_phone_number_text">Enter phone number</string>
+    <string name="setup_enter_phone_number_info_text">Please, enter the phone number of the sim card placed in the alarm control panel.</string>
+    <string name="setup_enter_phone_number_phone_number_hint">Phone number</string>
+    <string name="setup_enter_phone_number_button_next">Next</string>
+
+    <string name="setup_enter_pin_code">Enter pin code</string>
+    <string name="setup_enter_pin_code_info_text">Please, enter the pin code of the alarm control panel.</string>
+    <string name="setup_enter_pin_code_pin_code_hint">Pin code</string>
+
+    <string name="setup_ask_for_permissions_grant_permissions">Grant permissions</string>
+    <string name="setup_ask_for_permissions_info_text">Application needs permissions to send text messages in order to be able to communicate with the alarm system</string>
+    <string name="setup_ask_for_permissions_button_grant_permissions">Grant permissions</string>
+
+    <!--    Sms actions     -->
+    <string name="sms_action_type_start_alarm">Start alarm normal</string>
+    <string name="sms_action_type_start_alarm_home">Start alarm home</string>
+    <string name="sms_action_type_start_alarm_group">Start alarm group</string>
+    <string name="sms_action_type_stop_alarm">Stop alarm</string>
+
+    <string name="sms_action_type_start_alarm_partition">Start alarm partition</string>
+    <string name="sms_action_type_start_alarm_partition_home">Start alarm partition home</string>
+    <string name="sms_action_type_start_alarm_group_in_partition">Start alarm group in partition</string>
+    <string name="sms_action_type_stop_alarm_partition">Stop alarm partition</string>
+
+    <string name="sms_action_type_block_line">Block line</string>
+    <string name="sms_action_type_unblock_line">Unblock line</string>
+
+    <string name="sms_action_type_activate_entry">Activate entry</string>
+    <string name="sms_action_type_inactivate_entry">Inactivate entry</string>
+
+    <string name="sms_action_type_check_system_status">Check system status</string>
+    <string name="sms_action_type_check_last_alarm">Check last alarm</string>
+    <string name="sms_action_type_check_sim_credit">Check sim credit</string>
+
+    <!--    Menu     -->
+    <string name="menu_control_panel">Control panel</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_action_history">History</string>
+    <string name="menu_home">Home</string>
+
+    <!--    Control panel     -->
+    <string name="control_panel_title">Control panel</string>
+    <string name="control_panel_main_functions">Main functions</string>
+    <string name="control_panel_partition_functions">Partition functions</string>
+    <string name="control_panel_line_functions">Line functions</string>
+    <string name="control_panel_entry_functions">Entry functions</string>
+    <string name="control_panel_system_functions">System functions</string>
+
+    <!--    Home     -->
+    <string name="home_title">Home</string>
+    <string name="favourite_actions_limit_reached">Favourites action limit reached</string>
+    <string name="add_favourite_action_title">Add favourite action</string>
+
+    <!--    History    -->
+    <string name="action_history_title">History</string>
+    <string name="action_history_item_retry_button">Retry</string>
+    <string name="action_history_empty_list">Empty list</string>
+    <string name="action_history_clear_history">Clear history</string>
+    <string name="action_history_sms_code">Sms code:</string>
+
+    <!--    Settings    -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_alarm_phone_number">Alarm sim card phone number</string>
+    <string name="settings_alarm_pin_code">Alarm pin code</string>
+    <string name="settings_application_pin_code">Application pin code:</string>
+    <string name="settings_save">Save</string>
+    <string name="settings_protect_application_via_pin_code">Protect application via pin code</string>
+
+    <!--    Dialogs    -->
+    <string name="dialog_select_partition_title">Select partition</string>
+    <string name="dialog_select_line_title">Select line</string>
+    <string name="dialog_select_group_title">Select group</string>
+    <string name="dialog_select_entry_title">Select entry</string>
+    <string name="dialog_select_fav_name_enter_fav_action_name">Enter favourite action name</string>
+    <string name="dialog_select_fav_name_set_favourite_action_name">Set favourite action name</string>
+    <string name="action_history_clear_filters">Clear filters</string>
+    <string name="dialog_clear_history_title">Are you sure that you want to clear histroy?</string>
+    <string name="dialog_permissions_denied_title">SMS permissions are required. App won\'t work without this permissions.</string>
+    <string name="dialog_permissions_denied_navigate_to_settings">Navigate to settings</string>
+
+    <!--    Pin view    -->
+    <string name="pin_view_unlock">Unlock</string>
+    <string name="wrong_pin">Wrong pin</string>
+    <string name="pin_view_enter_pin_to_unlock">Enter pin to unlock the application</string>
+
 </resources>

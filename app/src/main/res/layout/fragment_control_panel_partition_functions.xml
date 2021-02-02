@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bonacode.securehome.ui.feature.main.controlpanel.partition.ControlPanelPartitionFunctionsViewModel"
+            />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.bonacode.securehome.ui.views.ButtonAction
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.startAlarmPartition()}"
+            app:buttonActionIcon="@drawable/ic_lock_simple"
+            app:buttonActionLabel="@string/sms_action_type_start_alarm_partition"
+            />
+
+        <com.bonacode.securehome.ui.views.ButtonAction
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.stopAlarmPartition()}"
+            app:buttonActionIcon="@drawable/ic_unlock"
+            app:buttonActionLabel="@string/sms_action_type_stop_alarm_partition"
+            />
+
+        <com.bonacode.securehome.ui.views.ButtonAction
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.startAlarmPartitionHome()}"
+            app:buttonActionIcon="@drawable/ic_lock_simple"
+            app:buttonActionLabel="@string/sms_action_type_start_alarm_partition_home"
+            />
+
+        <com.bonacode.securehome.ui.views.ButtonAction
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.startAlarmGroupInPartition()}"
+            app:buttonActionIcon="@drawable/ic_lock_simple"
+            app:buttonActionLabel="@string/sms_action_type_start_alarm_group_in_partition"
+            />
+    </LinearLayout>
+</layout>

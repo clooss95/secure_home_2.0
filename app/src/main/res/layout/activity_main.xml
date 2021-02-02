@@ -1,20 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".application.MainActivity"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+    <data>
 
-</FrameLayout>
+        <variable
+            name="viewModel"
+            type="com.bonacode.securehome.ui.feature.main.activity.MainViewModel"
+            />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.drawerlayout.widget.DrawerLayout
+                android:id="@+id/drawerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:openDrawer="start"
+                >
+
+                <include
+                    android:id="@+id/contentView"
+                    layout="@layout/content_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <com.google.android.material.navigation.NavigationView
+                    android:id="@+id/navigationView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:itemTextAppearance="?textAppearanceNavigationItem"
+                    android:layout_gravity="start"
+                    android:fitsSystemWindows="true"
+                    app:headerLayout="@layout/view_nav_header_main"
+                    app:menu="@menu/activity_main_drawer"
+                    />
+
+            </androidx.drawerlayout.widget.DrawerLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.showEnterPinCodeView}"
+            >
+
+            <include
+                layout="@layout/view_enter_pin_code"
+                app:afterTextChanged="@{viewModel}"
+                app:callback="@{viewModel}"
+                app:pinCode="@{viewModel.pinCode}"
+                app:pinErrorText="@{viewModel.pinErrorText}"
+                app:pinCodeValid="@{viewModel.pinCodeValid}"
+                />
+
+        </FrameLayout>
+    </FrameLayout>
+</layout>

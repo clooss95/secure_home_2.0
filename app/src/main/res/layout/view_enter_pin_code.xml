@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="afterTextChanged"
+            type="com.bonacode.securehome.ui.feature.enterpin.PinTextChangedCallback"
+            />
+
+        <variable
+            name="pinCode"
+            type="androidx.lifecycle.MutableLiveData&lt;String&gt;"
+            />
+
+        <variable
+            name="pinErrorText"
+            type="androidx.lifecycle.LiveData&lt;String&gt;"
+            />
+
+        <variable
+            name="pinCodeValid"
+            type="androidx.lifecycle.LiveData&lt;Boolean&gt;"
+            />
+
+        <variable
+            name="callback"
+            type="com.bonacode.securehome.ui.feature.main.activity.callback.PinCodeEnteredCallback"
+            />
+
+        <import type="androidx.lifecycle.LiveData" />
+    </data>
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?colorBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/header"
+                style="@style/TextHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_huge"
+                android:text="@string/pin_view_enter_pin_to_unlock"
+                android:textAppearance="?textAppearanceHeader"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin_huge"
+                android:layout_marginBottom="@dimen/margin_huge"
+                app:layout_constraintBottom_toTopOf="@id/button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/setup_icon_small_size"
+                    android:layout_height="@dimen/setup_icon_small_size"
+                    android:layout_marginBottom="@dimen/margin_big"
+                    app:srcCompat="@drawable/ic_lock"
+                    />
+
+                <com.chaos.view.PinView
+                    android:id="@+id/pinView"
+                    style="@style/PinWidget.PinView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:afterTextChanged="@{() -> afterTextChanged.onPinTextChanged()}"
+                    android:cursorVisible="true"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberPassword"
+                    android:padding="@dimen/pin_view_padding"
+                    android:text="@={pinCode}"
+                    android:textColor="?colorAccent"
+                    android:textSize="@dimen/pin_view_text_size"
+                    android:textStyle="bold"
+                    app:cursorColor="?colorPrimaryDark"
+                    app:cursorWidth="@dimen/pin_view_cursor_width"
+                    app:hideLineWhenFilled="false"
+                    app:itemCount="4"
+                    app:itemHeight="@dimen/pin_view_item_size"
+                    app:itemRadius="@dimen/pin_view_item_radius"
+                    app:itemSpacing="@dimen/pin_view_item_spacing"
+                    app:itemWidth="@dimen/pin_view_item_size"
+                    app:lineColor="?colorAccent"
+                    app:lineWidth="@dimen/pin_view_line_width"
+                    app:pinCodeEnteredCallback="@{callback}"
+                    app:pinCodeEnteredCallbackEnabled="@{pinCodeValid}"
+                    app:viewType="rectangle"
+                    tools:ignore="SpUsage"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@{pinErrorText}"
+                    android:textAppearance="?textAppearanceBody"
+                    />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button"
+                style="@style/ButtonPrimary"
+                android:layout_width="0dp"
+                android:layout_marginBottom="@dimen/margin_big"
+                android:enabled="@{pinCodeValid}"
+                android:onClick="@{() -> callback.pinCodeEntered()}"
+                android:text="@string/pin_view_unlock"
+                android:textAppearance="?textAppearanceButtonPrimary"
+                app:layout_constraintBottom_toTopOf="@id/footer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <FrameLayout
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_big"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <include layout="@layout/view_bonacode_footer" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

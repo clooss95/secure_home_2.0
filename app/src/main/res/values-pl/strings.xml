@@ -1,0 +1,104 @@
+<resources>
+    <!--    Common    -->
+    <string name="app_name">Secure Home</string>
+    <string name="ok">Ok</string>
+    <string name="action_sent_success">Komenda wysłana</string>
+    <string name="action_sent_failure">Błąd wysyłania komendy. Brakujące uprawnienia systemu Android.</string>
+    <string name="action_sent_failure_navigate_to_permissions">Przejdź do ustawień</string>
+    <string name="add_to_favourite">Dodaj do ulubionych</string>
+    <string name="yes">Tak</string>
+    <string name="cancel">Anuluj</string>
+    <string name="powered_by">Powered by</string>
+
+    <!--    Setup     -->
+    <string name="setup_intro_welcome_text">Witaj w aplikacji Secure Home</string>
+    <string name="setup_intro_info_text">Przejdź przez krótki proces konfiguracji aplikacji, który pozwoli Ci używać aplikację ze swoją centralą alarmową.</string>
+    <string name="setup_intro_works_only_with">UWAGA! Ta aplikacja współpracuje tylko z centralą alarmową Risco LightSYS.</string>
+    <string name="setup_intro_button_start_configuration">Rozpocznij konfigurację</string>
+
+    <string name="setup_enter_phone_number_text">Ustaw numer telefonu</string>
+    <string name="setup_enter_phone_number_info_text">Podaj numer telefonu karty sim umieszczonej w centrali alarmowej.</string>
+    <string name="setup_enter_phone_number_phone_number_hint">Numer telefonu</string>
+    <string name="setup_enter_phone_number_button_next">Dalej</string>
+
+    <string name="setup_enter_pin_code">Ustaw kod pin</string>
+    <string name="setup_enter_pin_code_info_text">Podaj kod pin centrali alarmowej.</string>
+    <string name="setup_enter_pin_code_pin_code_hint">Kod pin</string>
+
+    <string name="setup_ask_for_permissions_grant_permissions">Przyznaj uprawnienia aplikacji</string>
+    <string name="setup_ask_for_permissions_info_text">Aplikacja wymaga uprawnień do wysyłania SMS aby być w stanie komunikować się z cenralą alarmową.</string>
+    <string name="setup_ask_for_permissions_button_grant_permissions">Nadaj uprawnienia</string>
+
+    <!--    Sms actions     -->
+    <string name="sms_action_type_start_alarm">Uzbrojenie</string>
+    <string name="sms_action_type_start_alarm_home">Uzbrojenie domowe</string>
+    <string name="sms_action_type_start_alarm_group">Uzbrojenie grupy</string>
+    <string name="sms_action_type_stop_alarm">Rozbrojenie</string>
+
+    <string name="sms_action_type_start_alarm_partition">Uzbrojenie partycji</string>
+    <string name="sms_action_type_start_alarm_partition_home">Uzbrojenie domowe partycji</string>
+    <string name="sms_action_type_start_alarm_group_in_partition">Uzbrojenie grupy w partycji</string>
+    <string name="sms_action_type_stop_alarm_partition">Rozbrojenie partycji</string>
+
+    <string name="sms_action_type_block_line">Blokuj linię</string>
+    <string name="sms_action_type_unblock_line">Odblokuj linię</string>
+
+    <string name="sms_action_type_activate_entry">Aktywuj wyjście</string>
+    <string name="sms_action_type_inactivate_entry">Dezaktywuj wyjście</string>
+
+    <string name="sms_action_type_check_system_status">Sprawdź status systemu</string>
+    <string name="sms_action_type_check_last_alarm">Sprawdź ostatni alarm</string>
+    <string name="sms_action_type_check_sim_credit">Sprawdź kredyt karty sim</string>
+
+    <!--    Menu     -->
+    <string name="menu_control_panel">Panel sterowania</string>
+    <string name="menu_settings">Ustawienia</string>
+    <string name="menu_action_history">Historia akcji</string>
+    <string name="menu_home">Ekran główny</string>
+
+    <!--    Control panel     -->
+    <string name="control_panel_main_functions">Główne funkcje</string>
+    <string name="control_panel_partition_functions">Partycje</string>
+    <string name="control_panel_line_functions">Linie</string>
+    <string name="control_panel_entry_functions">Wyjścia</string>
+    <string name="control_panel_system_functions">System</string>
+    <string name="control_panel_title">Panel sterowania</string>
+
+    <!--    Home     -->
+    <string name="home_title">Ekran główny</string>
+    <string name="add_favourite_action_title">Dodaj ulubioną akcję</string>
+    <string name="favourite_actions_limit_reached">Osiągnięto limit ulubionych akcji</string>
+
+    <!--    History    -->
+    <string name="action_history_title">Historia akcji</string>
+    <string name="action_history_item_retry_button">Wyślij ponownie</string>
+    <string name="action_history_empty_list">Pusta lista</string>
+    <string name="action_history_clear_history">Wyczyść historię</string>
+    <string name="action_history_sms_code">Kod sms:</string>
+
+    <!--    Settings    -->
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_alarm_phone_number">Numer telefonu karty sim centrali</string>
+    <string name="settings_alarm_pin_code">Kod pin centrali</string>
+    <string name="settings_application_pin_code">Kod pin aplikacji:</string>
+    <string name="settings_save">Zapisz</string>
+    <string name="settings_protect_application_via_pin_code">Zabezpiecz aplikację kodem pin</string>
+
+    <!--    Dialogs    -->
+    <string name="dialog_select_partition_title">Wybierz partycję</string>
+    <string name="dialog_select_line_title">Wybierz linię</string>
+    <string name="dialog_select_group_title">Wybierz grupę</string>
+    <string name="dialog_select_entry_title">Wybierz wyjście</string>
+    <string name="dialog_select_fav_name_enter_fav_action_name">Podaj nazwę ulubionej akcji</string>
+    <string name="dialog_select_fav_name_set_favourite_action_name">Ustaw nazwę ulubionej akcji</string>
+    <string name="action_history_clear_filters">Wyczyść filtry</string>
+    <string name="dialog_clear_history_title">Czy jesteś pewny, że chcesz wyczyścić historię?</string>
+    <string name="dialog_permissions_denied_title">Uprawnienia do wysyłania SMS są wymagane aby korzystać z aplikacji!</string>
+    <string name="dialog_permissions_denied_navigate_to_settings">Przejdź do ustawień</string>
+
+    <!--    Pin view    -->
+    <string name="pin_view_unlock">Odblokuj</string>
+    <string name="wrong_pin">Niepoprawny pin</string>
+    <string name="pin_view_enter_pin_to_unlock">Podaj pin aby odblokować aplikację</string>
+
+</resources>

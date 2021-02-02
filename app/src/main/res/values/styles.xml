@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Header" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark2</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_size_huge</item>
+    </style>
+
+    <style name="TextAppearance.NavigationItem" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark2</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextHeader">
+        <item name="android:layout_marginStart">@dimen/margin_big</item>
+        <item name="android:layout_marginEnd">@dimen/margin_big</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextAppearance.Body" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:layout_marginStart">@dimen/margin_big</item>
+        <item name="android:layout_marginEnd">@dimen/margin_big</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextAppearance.Input" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextInput">
+        <item name="background">?colorBackground</item>
+        <item name="android:layout_marginStart">@dimen/margin_big</item>
+        <item name="android:layout_marginEnd">@dimen/margin_big</item>
+    </style>
+
+    <style name="TextAppearance.Footer" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark</item>
+        <item name="android:fontFamily">@font/lato_light</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="TextFooter">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextAppearance.ButtonPrimary" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="ButtonPrimary" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_height">@dimen/button_primary_height</item>
+        <item name="android:textColor">@color/button_primary_text_color</item>
+        <item name="android:layout_marginStart">@dimen/margin_big</item>
+        <item name="android:layout_marginEnd">@dimen/margin_big</item>
+        <item name="backgroundTint">@color/button_primary_background_tint_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextAppearance.ButtonAction" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.ExpandableHeader" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+    </style>
+
+    <style name="TextAppearance.TextListItemHeadline" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+    </style>
+
+    <style name="TextAppearance.TextListItemLine" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.TextTiny" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorTextDark</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_size_tiny</item>
+    </style>
+
+    <style name="ButtonFlat" parent="Widget.AppCompat.Button.Borderless">
+
+    </style>
+
+    <style name="TextAppearance.ButtonFlat" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?colorFlatButtonText</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+</resources>

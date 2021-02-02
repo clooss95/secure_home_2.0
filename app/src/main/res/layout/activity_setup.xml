@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".feature.setup.SetupActivity"
     >
 
-    <com.google.android.material.appbar.AppBarLayout
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bonacode.securehome.ui.feature.setup.SetupViewModel"
+            />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        tools:context=".ui.feature.setup.SetupActivity"
         >
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <fragment
+            android:id="@+id/navHostSetupActivity"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/setup_navigation"
             />
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <fragment
-        android:id="@+id/navHostFragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="721dp"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/setup_navigation"
-        />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </FrameLayout>
+</layout>

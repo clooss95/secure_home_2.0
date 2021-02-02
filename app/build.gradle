@@ -1,10 +1,29 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
+    id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.firebase.crashlytics'
 }
+
+apply from: "../ktlint.gradle"
+
+// keystore.properties file should reside in the project root directory.
+// Keep the keystore file containing your private key in a safe, secure place.
+// Do not check it into version control system.
+// Select strong passwords for the keystore and key.
+// This file should contain your signing information, as follows:
+/*
+storeFile=<PATH_TO_STORE_FILE>
+storePassword=<PASSWORD_FOR_THE_STORE>
+keyAlias=<NAME_OF_THE_KEY>
+keyPassword=<PASSWORD_FOR_THE_KEY>
+*/
+// Replace right-hand side with actual values.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     compileSdkVersion 30
@@ -18,12 +37,31 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -33,11 +71,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
     // kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
 
     // android
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -59,13 +101,28 @@ dependencies {
 
     // lifecycle
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
     // dependency injection
     implementation 'com.google.dagger:hilt-android:2.29.1-alpha'
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
     kapt 'com.google.dagger:hilt-android-compiler:2.29.1-alpha'
+
+    // room
+    implementation "androidx.room:room-runtime:2.3.0-alpha04"
+    kapt "androidx.room:room-compiler:2.3.0-alpha04"
+    implementation "androidx.room:room-ktx:2.3.0-alpha04"
+
+    // firebase
+    implementation platform('com.google.firebase:firebase-bom:26.4.0')
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation "com.google.firebase:firebase-crashlytics-ktx"
+
+    // paging
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0-alpha11"
 
     // date and time
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.4'
@@ -76,7 +133,22 @@ dependencies {
     // android permissions handler
     implementation 'com.karumi:dexter:6.2.2'
 
+    // encrypted shared preferences
+    implementation 'androidx.security:security-crypto:1.1.0-alpha03'
+
+    // expandable layout
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+
+    // dialogs
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:input:3.3.0'
+
+    // pin view
+    implementation 'com.chaos.view:pinview:1.4.4'
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

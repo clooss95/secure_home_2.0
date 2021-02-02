@@ -1,8 +1,10 @@
 package com.bonacode.securehome.application
 
 import android.app.Application
+import com.bonacode.securehome.BuildConfig
+import com.bonacode.securehome.application.common.CrashReportingTree
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.threetenabp.AndroidThreeTen
-import com.karumi.dexter.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -12,10 +14,12 @@ class SecureHomeApplication : Application() {
         super.onCreate()
         AndroidThreeTen.init(this)
 
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
+
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         } else {
-            // todo -  init crash reporting tree here
+            Timber.plant(CrashReportingTree)
         }
     }
 }

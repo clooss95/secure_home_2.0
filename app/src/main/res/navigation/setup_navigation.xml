@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/setup_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setup_navigation"
+    app:startDestination="@id/setupIntroFragment">
 
+    <fragment
+        android:id="@+id/setupIntroFragment"
+        android:name="com.bonacode.securehome.ui.feature.setup.intro.SetupIntroFragment"
+        android:label="SetupIntroFragment"
+        tools:layout="@layout/fragment_setup_intro">
+        <action
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/action_setupIntroFragment_to_setupEnterPhoneNumberFragment"
+            app:destination="@id/setupEnterPhoneNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupEnterPhoneNumberFragment"
+        android:name="com.bonacode.securehome.ui.feature.setup.enterphonenumber.SetupEnterPhoneNumberFragment"
+        android:label="SetupEnterPhoneNumberFragment"
+        tools:layout="@layout/fragment_setup_enter_phone_number" >
+        <action
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/action_setupEnterPhoneNumberFragment_to_setupEnterPinCodeFragment"
+            app:destination="@id/setupEnterPinCodeFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_setup_enter_pin_code"
+        android:id="@+id/setupEnterPinCodeFragment"
+        android:name="com.bonacode.securehome.ui.feature.setup.enterpincode.SetupEnterPinCodeFragment"
+        android:label="SetupEnterPinCodeFragment" >
+        <action
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/action_setupEnterPinCodeFragment_to_setupAskForPermissionsFragment"
+            app:destination="@id/setupAskForPermissionsFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_setup_ask_for_permissions"
+        android:id="@+id/setupAskForPermissionsFragment"
+        android:name="com.bonacode.securehome.ui.feature.setup.askforpermissions.SetupAskForPermissionsFragment"
+        android:label="SetupAskForPermissionsFragment" />
 </navigation>
