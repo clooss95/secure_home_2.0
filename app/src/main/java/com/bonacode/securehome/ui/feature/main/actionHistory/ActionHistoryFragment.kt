@@ -17,12 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.afollestad.materialdialogs.MaterialDialog
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.application.common.SwipeToDeleteCallback
+import com.bonacode.securehome.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.databinding.FragmentActionHistoryBinding
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Calendar
 import kotlinx.coroutines.launch
+import java.util.*
 
 @AndroidEntryPoint
 class ActionHistoryFragment :

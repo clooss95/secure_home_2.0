@@ -1,11 +1,11 @@
 package com.bonacode.securehome.application.di
 
-import com.bonacode.securehome.application.smscommunication.ActionProcessor
-import com.bonacode.securehome.application.smscommunication.ActionProcessorImpl
-import com.bonacode.securehome.application.smscommunication.SmsSender
-import com.bonacode.securehome.application.smscommunication.SmsSenderImpl
-import com.bonacode.securehome.application.smscommunication.builder.ActionCommandBuilderProvider
-import com.bonacode.securehome.application.smscommunication.builder.ActionCommandBuilderProviderImpl
+import com.bonacode.securehome.data.feature.action.ActionCommandBuilderProviderImpl
+import com.bonacode.securehome.data.feature.action.ActionProcessorImpl
+import com.bonacode.securehome.data.feature.action.SmsSenderImpl
+import com.bonacode.securehome.domain.feature.action.ActionCommandBuilderProvider
+import com.bonacode.securehome.domain.feature.action.ActionProcessor
+import com.bonacode.securehome.domain.feature.action.SmsSender
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

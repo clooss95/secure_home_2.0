@@ -2,9 +2,6 @@
 Secure home is an Android Application for controlling the Risco LightSYS system via sms commands.
 
 # TODO (when I have more free time)
-
-  - Separate "domain" and "data" packages into a gradle modules
-  - Separate "smscommunication" into library
   - Add unit tests!
 
 ### Tech

@@ -1,0 +1,22 @@
+<resources>
+    <!--    Sms actions     -->
+    <string name="sms_action_type_start_alarm">Uzbrojenie</string>
+    <string name="sms_action_type_start_alarm_home">Uzbrojenie domowe</string>
+    <string name="sms_action_type_start_alarm_group">Uzbrojenie grupy</string>
+    <string name="sms_action_type_stop_alarm">Rozbrojenie</string>
+
+    <string name="sms_action_type_start_alarm_partition">Uzbrojenie partycji</string>
+    <string name="sms_action_type_start_alarm_partition_home">Uzbrojenie domowe partycji</string>
+    <string name="sms_action_type_start_alarm_group_in_partition">Uzbrojenie grupy w partycji</string>
+    <string name="sms_action_type_stop_alarm_partition">Rozbrojenie partycji</string>
+
+    <string name="sms_action_type_block_line">Blokuj linię</string>
+    <string name="sms_action_type_unblock_line">Odblokuj linię</string>
+
+    <string name="sms_action_type_activate_entry">Aktywuj wyjście</string>
+    <string name="sms_action_type_inactivate_entry">Dezaktywuj wyjście</string>
+
+    <string name="sms_action_type_check_system_status">Sprawdź status systemu</string>
+    <string name="sms_action_type_check_last_alarm">Sprawdź ostatni alarm</string>
+    <string name="sms_action_type_check_sim_credit">Sprawdź kredyt karty sim</string>
+</resources>

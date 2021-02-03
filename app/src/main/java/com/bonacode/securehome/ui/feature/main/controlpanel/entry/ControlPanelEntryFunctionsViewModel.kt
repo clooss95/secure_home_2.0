@@ -32,57 +32,73 @@ class ControlPanelEntryFunctionsViewModel @ViewModelInject constructor(
     saveFavouriteActionCallback
 ) {
 
-    fun activateEntry() {
+    fun activateEntryClicked() {
         selectEntryAndProcessAction { entry ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildActivateEntryAction.invoke(
-                                BuildActivateEntryAction.Params(
-                                    entry
-                                )
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processActivateEntryAddToFavourite(entry)
             } else {
-                viewModelScope.launch {
-                    val action = activateEntry.invoke(ActivateEntry.Params(entry = entry))
-                    actionSentCallback.actionSent(
-                        action.second,
-                        ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                        action.first
-                    )
-                }
+                processActivateEntryCommand(entry)
             }
         }
     }
 
-    fun inactivateEntry() {
+    fun inactivateEntryClicked() {
         selectEntryAndProcessAction { entry ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildInactivateEntryAction.invoke(
-                                BuildInactivateEntryAction.Params(entry)
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processInactivateEntryAddToFavourite(entry)
             } else {
-                viewModelScope.launch {
-                    val action = inactivateEntry.invoke(InactivateEntry.Params(entry = entry))
-                    actionSentCallback.actionSent(
-                        action.second,
-                        ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                        action.first
-                    )
-                }
+                processInactivateEntryCommand(entry)
             }
+        }
+    }
+
+    private fun processActivateEntryAddToFavourite(entry: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildActivateEntryAction.invoke(
+                        BuildActivateEntryAction.Params(
+                            entry
+                        )
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processActivateEntryCommand(entry: Int) {
+        viewModelScope.launch {
+            val action = activateEntry.invoke(ActivateEntry.Params(entry = entry))
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processInactivateEntryAddToFavourite(entry: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildInactivateEntryAction.invoke(
+                        BuildInactivateEntryAction.Params(entry)
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processInactivateEntryCommand(entry: Int) {
+        viewModelScope.launch {
+            val action = inactivateEntry.invoke(InactivateEntry.Params(entry = entry))
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
         }
     }
 }

@@ -33,124 +33,161 @@ class ControlPanelPartitionFunctionsViewModel @ViewModelInject constructor(
     canSaveFavouriteAction: CanSaveFavouriteAction,
     saveFavouriteActionCallback: SaveFavouriteActionCallback,
     saveFavouriteAction: SaveFavouriteAction
-) : ControlPanelSectionViewModel(savedStateHandle, saveFavouriteAction, canSaveFavouriteAction, saveFavouriteActionCallback) {
+) : ControlPanelSectionViewModel(
+    savedStateHandle,
+    saveFavouriteAction,
+    canSaveFavouriteAction,
+    saveFavouriteActionCallback
+) {
 
-    fun startAlarmPartition() {
+    fun startAlarmPartitionClicked() {
         selectPartitionAndProcessAction { partition ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildStartAlarmPartitionAction.invoke(
-                                BuildStartAlarmPartitionAction.Params(partition)
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processStartAlarmPartitionAddToFavourite(partition)
             } else {
-                viewModelScope.launch {
-                    val action = startAlarmPartition.invoke(
-                        StartAlarmPartition.Params(
-                            partition = partition
-                        )
-                    )
-                    actionSentCallback.actionSent(
-                        action.second,
-                        ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                        action.first
-                    )
-                }
+                processStartAlarmPartitionCommand(partition)
             }
         }
     }
 
-    fun startAlarmPartitionHome() {
+    fun startAlarmPartitionHomeClicked() {
         selectPartitionAndProcessAction { partition ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildStartAlarmPartitionHomeAction.invoke(
-                                BuildStartAlarmPartitionHomeAction.Params(partition)
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processStartAlarmHomePartitionAddToFavourite(partition)
             } else {
-                viewModelScope.launch {
-                    val action =
-                        startAlarmPartitionHome.invoke(StartAlarmPartitionHome.Params(partition = partition))
-                    actionSentCallback.actionSent(
-                        action.second,
-                        ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                        action.first
-                    )
-                }
+                processStartAlarmHomePartitionCommand(partition)
             }
         }
     }
 
-    fun startAlarmGroupInPartition() {
+    fun startAlarmGroupInPartitionClicked() {
         selectGroupAndProcessAction { group ->
             selectPartitionAndProcessAction { partition ->
                 if (isInAddToFavouriteMode) {
-                    askForActionNameAndSaveFavouriteAction { actionName ->
-                        viewModelScope.launch {
-                            saveFavouriteAction(
-                                buildStartAlarmGroupInPartitionAction.invoke(
-                                    BuildStartAlarmGroupInPartitionAction.Params(group, partition)
-                                ), actionName
-                            )
-                            navigateBack()
-                        }
-                    }
+                    processStartAlarmGroupInPartitionAddToFavourite(group, partition)
                 } else {
-                    viewModelScope.launch {
-                        val action = startAlarmGroupInPartition.invoke(
-                            StartAlarmGroupInPartition.Params(
-                                group = group,
-                                partition = partition
-                            )
-                        )
-                        actionSentCallback.actionSent(
-                            action.second,
-                            ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                            action.first
-                        )
-                    }
+                    processStartAlarmGroupInPartitionCommand(group, partition)
                 }
             }
         }
     }
 
-    fun stopAlarmPartition() {
+    fun stopAlarmPartitionClicked() {
         selectPartitionAndProcessAction { partition ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildStopAlarmPartitionAction.invoke(
-                                BuildStopAlarmPartitionAction.Params(
-                                    partition
-                                )
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processStopAlarmPartitionAddToFavourite(partition)
             } else {
-                viewModelScope.launch {
-                    val action =
-                        stopAlarmPartition.invoke(StopAlarmPartition.Params(partition = partition))
-                    actionSentCallback.actionSent(
-                        action.second,
-                        ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                        action.first
-                    )
-                }
+                processStopAlarmPartitionCommand(partition)
             }
+        }
+    }
+
+    private fun processStartAlarmPartitionAddToFavourite(partition: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildStartAlarmPartitionAction.invoke(
+                        BuildStartAlarmPartitionAction.Params(partition)
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStartAlarmPartitionCommand(partition: Int) {
+        viewModelScope.launch {
+            val action = startAlarmPartition.invoke(
+                StartAlarmPartition.Params(
+                    partition = partition
+                )
+            )
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processStartAlarmHomePartitionAddToFavourite(partition: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildStartAlarmPartitionHomeAction.invoke(
+                        BuildStartAlarmPartitionHomeAction.Params(partition)
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStartAlarmHomePartitionCommand(partition: Int) {
+        viewModelScope.launch {
+            val action =
+                startAlarmPartitionHome.invoke(StartAlarmPartitionHome.Params(partition = partition))
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processStartAlarmGroupInPartitionAddToFavourite(group: String, partition: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildStartAlarmGroupInPartitionAction.invoke(
+                        BuildStartAlarmGroupInPartitionAction.Params(group, partition)
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStartAlarmGroupInPartitionCommand(group: String, partition: Int) {
+        viewModelScope.launch {
+            val action = startAlarmGroupInPartition.invoke(
+                StartAlarmGroupInPartition.Params(
+                    group = group,
+                    partition = partition
+                )
+            )
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processStopAlarmPartitionAddToFavourite(partition: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildStopAlarmPartitionAction.invoke(
+                        BuildStopAlarmPartitionAction.Params(
+                            partition
+                        )
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStopAlarmPartitionCommand(partition: Int) {
+        viewModelScope.launch {
+            val action =
+                stopAlarmPartition.invoke(StopAlarmPartition.Params(partition = partition))
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
         }
     }
 }

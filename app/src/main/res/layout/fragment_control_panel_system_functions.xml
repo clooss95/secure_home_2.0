@@ -21,7 +21,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.checkSystemStatus()}"
+            android:onClick="@{() -> viewModel.checkSystemStatusClicked()}"
             app:buttonActionIcon="@drawable/ic_status"
             app:buttonActionLabel="@string/sms_action_type_check_system_status"
             />
@@ -29,7 +29,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.checkLastAlarm()}"
+            android:onClick="@{() -> viewModel.checkLastAlarmClicked()}"
             app:buttonActionIcon="@drawable/ic_alarm"
             app:buttonActionLabel="@string/sms_action_type_check_last_alarm"
             />
@@ -37,7 +37,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.checkSimCredit()}"
+            android:onClick="@{() -> viewModel.checkSimCreditClicked()}"
             app:buttonActionIcon="@drawable/ic_money"
             app:buttonActionLabel="@string/sms_action_type_check_sim_credit"
             />

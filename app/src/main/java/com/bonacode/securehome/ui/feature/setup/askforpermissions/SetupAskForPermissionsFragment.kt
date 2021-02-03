@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.afollestad.materialdialogs.MaterialDialog
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelFragment
+import com.bonacode.securehome.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.databinding.FragmentSetupAskForPermissionsBinding
 import com.bonacode.securehome.ui.feature.main.activity.MainActivity
 import com.karumi.dexter.Dexter

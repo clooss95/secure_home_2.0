@@ -34,75 +34,128 @@ class ControlPanelMainFunctionsViewModel @ViewModelInject constructor(
     saveFavouriteAction: SaveFavouriteAction,
     canSaveFavouriteAction: CanSaveFavouriteAction,
     saveFavouriteActionCallback: SaveFavouriteActionCallback
-) : ControlPanelSectionViewModel(savedStateHandle, saveFavouriteAction, canSaveFavouriteAction, saveFavouriteActionCallback) {
+) : ControlPanelSectionViewModel(
+    savedStateHandle,
+    saveFavouriteAction,
+    canSaveFavouriteAction,
+    saveFavouriteActionCallback
+) {
 
-    fun startAlarmNormal() {
+    fun startAlarmNormalClicked() {
         if (isInAddToFavouriteMode) {
-            askForActionNameAndSaveFavouriteAction { actionName ->
-                viewModelScope.launch {
-                    saveFavouriteAction(buildStartAlarmAction.invoke(), actionName)
-                    navigateBack()
-                }
-            }
+            processStartAlarmNormalAddToFavourite()
         } else {
-            viewModelScope.launch {
-                val action = startAlarmNormal.invoke()
-                actionSentCallback.actionSent(action.second, ActionSentCallback.ActionSentSource.CONTROL_PANEL, action.first)
-            }
+            processStartAlarmNormalCommand()
         }
     }
 
-    fun startAlarmHome() {
+    fun startAlarmHomeClicked() {
         if (isInAddToFavouriteMode) {
-            askForActionNameAndSaveFavouriteAction { actionName ->
-                viewModelScope.launch {
-                    saveFavouriteAction(buildStartAlarmHomeAction.invoke(), actionName)
-                    navigateBack()
-                }
-            }
+            processStartAlarmHomeAddToFavourite()
         } else {
-            viewModelScope.launch {
-                val action = startAlarmHome.invoke()
-                actionSentCallback.actionSent(action.second, ActionSentCallback.ActionSentSource.CONTROL_PANEL, action.first)
-            }
+            processStartAlarmHomeCommand()
         }
     }
 
-    fun stopAlarm() {
+    fun stopAlarmClicked() {
         if (isInAddToFavouriteMode) {
-            askForActionNameAndSaveFavouriteAction { actionName ->
-                viewModelScope.launch {
-                    saveFavouriteAction(buildStopAlarmAction.invoke(), actionName)
-                    navigateBack()
-                }
-            }
+            processStopAlarmAddToFavourite()
         } else {
-            viewModelScope.launch {
-                val action = stopAlarm.invoke()
-                actionSentCallback.actionSent(action.second, ActionSentCallback.ActionSentSource.CONTROL_PANEL, action.first)
-            }
+            processStopAlarmCommand()
         }
     }
 
-    fun startAlarmGroup() {
+    fun startAlarmGroupClicked() {
         selectGroupAndProcessAction { group ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildStartAlarmGroupAction.invoke(
-                                BuildStartAlarmGroupAction.Params(group)
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processStartAlarmGroupAddToFavourite(group)
             } else {
-                viewModelScope.launch {
-                    val action = startAlarmGroup.invoke(StartAlarmGroup.Params(group = group))
-                    actionSentCallback.actionSent(action.second, ActionSentCallback.ActionSentSource.CONTROL_PANEL, action.first)
-                }
+                processStartAlarmGroupCommand(group)
             }
+        }
+    }
+
+    private fun processStartAlarmNormalAddToFavourite() {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(buildStartAlarmAction.invoke(), actionName)
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStartAlarmNormalCommand() {
+        viewModelScope.launch {
+            val action = startAlarmNormal.invoke()
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processStartAlarmHomeAddToFavourite() {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(buildStartAlarmHomeAction.invoke(), actionName)
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStartAlarmHomeCommand() {
+        viewModelScope.launch {
+            val action = startAlarmHome.invoke()
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processStopAlarmAddToFavourite() {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(buildStopAlarmAction.invoke(), actionName)
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStopAlarmCommand() {
+        viewModelScope.launch {
+            val action = stopAlarm.invoke()
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processStartAlarmGroupAddToFavourite(group: String) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildStartAlarmGroupAction.invoke(
+                        BuildStartAlarmGroupAction.Params(group)
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processStartAlarmGroupCommand(group: String) {
+        viewModelScope.launch {
+            val action = startAlarmGroup.invoke(StartAlarmGroup.Params(group = group))
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
         }
     }
 }

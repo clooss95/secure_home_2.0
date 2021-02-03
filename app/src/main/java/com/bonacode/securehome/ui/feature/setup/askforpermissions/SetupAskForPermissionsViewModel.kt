@@ -3,8 +3,8 @@ package com.bonacode.securehome.ui.feature.setup.askforpermissions
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.bonacode.securehome.application.architecture.mvvm.BaseViewModel
-import com.bonacode.securehome.application.common.SingleEvent
+import com.bonacode.securehome.architecture.SingleEvent
+import com.bonacode.securehome.architecture.mvvm.BaseViewModel
 import com.bonacode.securehome.domain.feature.settings.datasource.SettingsDataSource
 
 class SetupAskForPermissionsViewModel @ViewModelInject constructor(

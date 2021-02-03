@@ -1,7 +1,7 @@
 package com.bonacode.securehome.ui.feature.main.activity.callback
 
-import com.bonacode.securehome.application.smscommunication.SmsSendResult
 import com.bonacode.securehome.domain.feature.action.model.ActionModel
+import com.bonacode.securehome.domain.feature.action.model.SmsSendResult
 
 interface ActionSentCallback {
     enum class ActionSentSource {

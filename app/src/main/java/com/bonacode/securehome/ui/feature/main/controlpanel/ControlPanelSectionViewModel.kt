@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import com.bonacode.securehome.application.architecture.mvvm.BaseViewModel
-import com.bonacode.securehome.application.architecture.navigation.NavigationAction
-import com.bonacode.securehome.application.common.SingleEvent
+import com.bonacode.securehome.architecture.SingleEvent
+import com.bonacode.securehome.architecture.mvvm.BaseViewModel
+import com.bonacode.securehome.architecture.navigation.NavigationAction
 import com.bonacode.securehome.domain.common.invoke
 import com.bonacode.securehome.domain.feature.action.model.ActionModel
 import com.bonacode.securehome.domain.feature.favouriteaction.model.FavouriteActionModel
@@ -61,7 +61,11 @@ abstract class ControlPanelSectionViewModel(
     }
 
     fun askForActionNameAndSaveFavouriteAction(action: (String) -> Unit) {
-        _askForActionNameAndSaveFavActionEvent.postValue(SingleEvent(action))
+        _askForActionNameAndSaveFavActionEvent.postValue(
+            SingleEvent(
+                action
+            )
+        )
     }
 
     protected fun saveFavouriteAction(action: ActionModel, actionName: String) {

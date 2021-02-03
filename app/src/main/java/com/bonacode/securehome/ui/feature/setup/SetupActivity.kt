@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.viewModels
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelActivity
+import com.bonacode.securehome.architecture.mvvm.ViewModelActivity
 import com.bonacode.securehome.databinding.ActivitySetupBinding
 import dagger.hilt.android.AndroidEntryPoint
 

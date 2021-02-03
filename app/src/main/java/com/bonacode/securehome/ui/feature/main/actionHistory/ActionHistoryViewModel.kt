@@ -8,8 +8,8 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.bonacode.securehome.application.architecture.mvvm.BaseViewModel
-import com.bonacode.securehome.application.common.SingleEvent
+import com.bonacode.securehome.architecture.SingleEvent
+import com.bonacode.securehome.architecture.mvvm.BaseViewModel
 import com.bonacode.securehome.domain.common.invoke
 import com.bonacode.securehome.domain.feature.actionhistory.model.ActionHistoryModel
 import com.bonacode.securehome.domain.feature.actionhistory.model.DateSelectionState
@@ -58,7 +58,11 @@ class ActionHistoryViewModel @ViewModelInject constructor(
     }
 
     fun showDialogQuestionClearHistory() {
-        _showDialogQuestionClearHistoryEvent.postValue(SingleEvent(Unit))
+        _showDialogQuestionClearHistoryEvent.postValue(
+            SingleEvent(
+                Unit
+            )
+        )
     }
 
     fun clearHistory() {

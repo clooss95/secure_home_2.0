@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 app:buttonActionIcon="@drawable/ic_check"
                 app:buttonActionLabel="@string/sms_action_type_activate_entry"
-                android:onClick="@{() -> viewModel.activateEntry()}"
+                android:onClick="@{() -> viewModel.activateEntryClicked()}"
                 />
 
             <com.bonacode.securehome.ui.views.ButtonAction
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 app:buttonActionIcon="@drawable/ic_block"
                 app:buttonActionLabel="@string/sms_action_type_inactivate_entry"
-                android:onClick="@{() -> viewModel.inactivateEntry()}"
+                android:onClick="@{() -> viewModel.inactivateEntryClicked()}"
                 />
 
         </LinearLayout>

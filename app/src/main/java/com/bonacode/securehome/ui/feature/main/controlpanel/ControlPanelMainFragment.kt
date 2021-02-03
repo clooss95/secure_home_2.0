@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelFragment
+import com.bonacode.securehome.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.databinding.FragmentControlPanelMainBinding
 import com.bonacode.securehome.ui.feature.main.controlpanel.entry.ControlPanelEntryFunctionsFragment
 import com.bonacode.securehome.ui.feature.main.controlpanel.line.ControlPanelLineFunctionsFragment

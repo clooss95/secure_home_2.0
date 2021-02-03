@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.application.common.SwipeToDeleteCallback
+import com.bonacode.securehome.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 

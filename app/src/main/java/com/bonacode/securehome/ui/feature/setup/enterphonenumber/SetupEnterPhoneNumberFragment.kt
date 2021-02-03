@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelFragment
+import com.bonacode.securehome.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.databinding.FragmentSetupEnterPhoneNumberBinding
 import dagger.hilt.android.AndroidEntryPoint
 

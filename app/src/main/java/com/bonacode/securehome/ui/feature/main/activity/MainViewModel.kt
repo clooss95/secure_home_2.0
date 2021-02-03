@@ -8,12 +8,12 @@ import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.viewModelScope
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.BaseViewModel
-import com.bonacode.securehome.application.common.SingleEvent
-import com.bonacode.securehome.application.smscommunication.SmsSendResult
+import com.bonacode.securehome.architecture.SingleEvent
+import com.bonacode.securehome.architecture.mvvm.BaseViewModel
 import com.bonacode.securehome.domain.common.invoke
 import com.bonacode.securehome.domain.feature.action.model.ActionModel
 import com.bonacode.securehome.domain.feature.action.model.ActionSentEvent
+import com.bonacode.securehome.domain.feature.action.model.SmsSendResult
 import com.bonacode.securehome.domain.feature.favouriteaction.model.FavouriteActionModel
 import com.bonacode.securehome.domain.feature.favouriteaction.usecase.CanSaveFavouriteAction
 import com.bonacode.securehome.domain.feature.favouriteaction.usecase.SaveFavouriteAction
@@ -93,7 +93,11 @@ class MainViewModel @ViewModelInject constructor(
     }
 
     override fun onFavouriteActionsLimitReached() {
-        _favouriteActionsLimitReached.postValue(SingleEvent(Unit))
+        _favouriteActionsLimitReached.postValue(
+            SingleEvent(
+                Unit
+            )
+        )
     }
 
     override fun pinCodeEntered() {

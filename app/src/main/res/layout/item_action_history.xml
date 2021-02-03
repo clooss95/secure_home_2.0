@@ -6,7 +6,7 @@
 
     <data>
 
-        <import type="com.bonacode.securehome.application.common.TimeHelper" />
+        <import type="com.bonacode.securehome.domain.common.TimeHelper" />
 
         <variable
             name="model"

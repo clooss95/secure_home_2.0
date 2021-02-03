@@ -1,2 +1,5 @@
+include ':architecture'
+include ':data'
+include ':domain'
 include ':app'
 rootProject.name = "Secure Home"

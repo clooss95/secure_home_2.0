@@ -37,63 +37,87 @@ class ControlPanelSystemFunctionsViewModel @ViewModelInject constructor(
     saveFavouriteActionCallback
 ) {
 
-    fun checkSystemStatus() {
+    fun checkSystemStatusClicked() {
         if (isInAddToFavouriteMode) {
-            askForActionNameAndSaveFavouriteAction { actionName ->
-                viewModelScope.launch {
-                    saveFavouriteAction(buildCheckStatusAction.invoke(), actionName)
-                    navigateBack()
-                }
-            }
+            processCheckSystemStatusAddToFavourite()
         } else {
+            processCheckSystemStatusCommand()
+        }
+    }
+
+    fun checkLastAlarmClicked() {
+        if (isInAddToFavouriteMode) {
+            processCheckLastAlarmAddToFavourite()
+        } else {
+            processCheckLastAlarmCommand()
+        }
+    }
+
+    fun checkSimCreditClicked() {
+        if (isInAddToFavouriteMode) {
+            processCheckSimCreditAddToFavourite()
+        } else {
+            processCheckSimCreditCommand()
+        }
+    }
+
+    private fun processCheckSystemStatusAddToFavourite() {
+        askForActionNameAndSaveFavouriteAction { actionName ->
             viewModelScope.launch {
-                val action = checkSystemStatus.invoke()
-                actionSentCallback.actionSent(
-                    action.second,
-                    ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                    action.first
-                )
+                saveFavouriteAction(buildCheckStatusAction.invoke(), actionName)
+                navigateBack()
             }
         }
     }
 
-    fun checkLastAlarm() {
-        if (isInAddToFavouriteMode) {
-            askForActionNameAndSaveFavouriteAction { actionName ->
-                viewModelScope.launch {
-                    saveFavouriteAction(buildCheckLastAlarmAction.invoke(), actionName)
-                    navigateBack()
-                }
-            }
-        } else {
+    private fun processCheckSystemStatusCommand() {
+        viewModelScope.launch {
+            val action = checkSystemStatus.invoke()
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processCheckLastAlarmAddToFavourite() {
+        askForActionNameAndSaveFavouriteAction { actionName ->
             viewModelScope.launch {
-                val action = checkLastAlarm.invoke()
-                actionSentCallback.actionSent(
-                    action.second,
-                    ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                    action.first
-                )
+                saveFavouriteAction(buildCheckLastAlarmAction.invoke(), actionName)
+                navigateBack()
             }
         }
     }
 
-    fun checkSimCredit() {
-        if (isInAddToFavouriteMode) {
-            askForActionNameAndSaveFavouriteAction { actionName ->
-                viewModelScope.launch {
-                    saveFavouriteAction(buildCheckSimCreditAction.invoke(), actionName)
-                    navigateBack()
-                }
-            }
-        } else {
+    private fun processCheckLastAlarmCommand() {
+        viewModelScope.launch {
+            val action = checkLastAlarm.invoke()
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processCheckSimCreditAddToFavourite() {
+        askForActionNameAndSaveFavouriteAction { actionName ->
             viewModelScope.launch {
-                val action = checkSimCredit.invoke()
-                actionSentCallback.actionSent(
-                    action.second,
-                    ActionSentCallback.ActionSentSource.CONTROL_PANEL,
-                    action.first
-                )
+                saveFavouriteAction(buildCheckSimCreditAction.invoke(), actionName)
+                navigateBack()
             }
+        }
+    }
+
+    private fun processCheckSimCreditCommand() {
+        viewModelScope.launch {
+            val action = checkSimCredit.invoke()
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
         }
     }
 }

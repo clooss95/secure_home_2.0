@@ -5,9 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.viewModelScope
-import com.bonacode.securehome.application.architecture.mvvm.BaseViewModel
-import com.bonacode.securehome.application.architecture.navigation.NavigationAction
 import com.bonacode.securehome.application.common.combineWith
+import com.bonacode.securehome.architecture.mvvm.BaseViewModel
+import com.bonacode.securehome.architecture.navigation.NavigationAction
 import com.bonacode.securehome.domain.common.invoke
 import com.bonacode.securehome.domain.feature.settings.model.SettingsModel
 import com.bonacode.securehome.domain.feature.settings.usecase.GetSettings

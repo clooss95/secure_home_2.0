@@ -21,7 +21,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.blockLine()}"
+            android:onClick="@{() -> viewModel.blockLineClicked()}"
             app:buttonActionIcon="@drawable/ic_block"
             app:buttonActionLabel="@string/sms_action_type_block_line"
             />
@@ -29,7 +29,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.unblockLine()}"
+            android:onClick="@{() -> viewModel.unblockLineClicked()}"
             app:buttonActionIcon="@drawable/ic_check"
             app:buttonActionLabel="@string/sms_action_type_unblock_line"
             />

@@ -4,7 +4,7 @@ import androidx.databinding.ViewDataBinding
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.input.input
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelFragment
+import com.bonacode.securehome.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.ui.feature.common.ValuePickerDialog
 
 abstract class ControlPanelSectionFragment<VM : ControlPanelSectionViewModel, B : ViewDataBinding>() :

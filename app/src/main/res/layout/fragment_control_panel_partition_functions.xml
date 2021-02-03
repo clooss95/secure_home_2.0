@@ -20,7 +20,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.startAlarmPartition()}"
+            android:onClick="@{() -> viewModel.startAlarmPartitionClicked()}"
             app:buttonActionIcon="@drawable/ic_lock_simple"
             app:buttonActionLabel="@string/sms_action_type_start_alarm_partition"
             />
@@ -28,7 +28,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.stopAlarmPartition()}"
+            android:onClick="@{() -> viewModel.stopAlarmPartitionClicked()}"
             app:buttonActionIcon="@drawable/ic_unlock"
             app:buttonActionLabel="@string/sms_action_type_stop_alarm_partition"
             />
@@ -36,7 +36,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.startAlarmPartitionHome()}"
+            android:onClick="@{() -> viewModel.startAlarmPartitionHomeClicked()}"
             app:buttonActionIcon="@drawable/ic_lock_simple"
             app:buttonActionLabel="@string/sms_action_type_start_alarm_partition_home"
             />
@@ -44,7 +44,7 @@
         <com.bonacode.securehome.ui.views.ButtonAction
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.startAlarmGroupInPartition()}"
+            android:onClick="@{() -> viewModel.startAlarmGroupInPartitionClicked()}"
             app:buttonActionIcon="@drawable/ic_lock_simple"
             app:buttonActionLabel="@string/sms_action_type_start_alarm_group_in_partition"
             />

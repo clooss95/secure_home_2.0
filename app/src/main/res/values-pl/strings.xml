@@ -26,29 +26,8 @@
     <string name="setup_enter_pin_code_pin_code_hint">Kod pin</string>
 
     <string name="setup_ask_for_permissions_grant_permissions">Przyznaj uprawnienia aplikacji</string>
-    <string name="setup_ask_for_permissions_info_text">Aplikacja wymaga uprawnień do wysyłania SMS aby być w stanie komunikować się z cenralą alarmową.</string>
+    <string name="setup_ask_for_permissions_info_text">Aplikacja wymaga uprawnień do wysyłania SMS aby być w stanie komunikować się z centralą alarmową.</string>
     <string name="setup_ask_for_permissions_button_grant_permissions">Nadaj uprawnienia</string>
-
-    <!--    Sms actions     -->
-    <string name="sms_action_type_start_alarm">Uzbrojenie</string>
-    <string name="sms_action_type_start_alarm_home">Uzbrojenie domowe</string>
-    <string name="sms_action_type_start_alarm_group">Uzbrojenie grupy</string>
-    <string name="sms_action_type_stop_alarm">Rozbrojenie</string>
-
-    <string name="sms_action_type_start_alarm_partition">Uzbrojenie partycji</string>
-    <string name="sms_action_type_start_alarm_partition_home">Uzbrojenie domowe partycji</string>
-    <string name="sms_action_type_start_alarm_group_in_partition">Uzbrojenie grupy w partycji</string>
-    <string name="sms_action_type_stop_alarm_partition">Rozbrojenie partycji</string>
-
-    <string name="sms_action_type_block_line">Blokuj linię</string>
-    <string name="sms_action_type_unblock_line">Odblokuj linię</string>
-
-    <string name="sms_action_type_activate_entry">Aktywuj wyjście</string>
-    <string name="sms_action_type_inactivate_entry">Dezaktywuj wyjście</string>
-
-    <string name="sms_action_type_check_system_status">Sprawdź status systemu</string>
-    <string name="sms_action_type_check_last_alarm">Sprawdź ostatni alarm</string>
-    <string name="sms_action_type_check_sim_credit">Sprawdź kredyt karty sim</string>
 
     <!--    Menu     -->
     <string name="menu_control_panel">Panel sterowania</string>

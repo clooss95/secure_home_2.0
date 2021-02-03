@@ -29,27 +29,6 @@
     <string name="setup_ask_for_permissions_info_text">Application needs permissions to send text messages in order to be able to communicate with the alarm system</string>
     <string name="setup_ask_for_permissions_button_grant_permissions">Grant permissions</string>
 
-    <!--    Sms actions     -->
-    <string name="sms_action_type_start_alarm">Start alarm normal</string>
-    <string name="sms_action_type_start_alarm_home">Start alarm home</string>
-    <string name="sms_action_type_start_alarm_group">Start alarm group</string>
-    <string name="sms_action_type_stop_alarm">Stop alarm</string>
-
-    <string name="sms_action_type_start_alarm_partition">Start alarm partition</string>
-    <string name="sms_action_type_start_alarm_partition_home">Start alarm partition home</string>
-    <string name="sms_action_type_start_alarm_group_in_partition">Start alarm group in partition</string>
-    <string name="sms_action_type_stop_alarm_partition">Stop alarm partition</string>
-
-    <string name="sms_action_type_block_line">Block line</string>
-    <string name="sms_action_type_unblock_line">Unblock line</string>
-
-    <string name="sms_action_type_activate_entry">Activate entry</string>
-    <string name="sms_action_type_inactivate_entry">Inactivate entry</string>
-
-    <string name="sms_action_type_check_system_status">Check system status</string>
-    <string name="sms_action_type_check_last_alarm">Check last alarm</string>
-    <string name="sms_action_type_check_sim_credit">Check sim credit</string>
-
     <!--    Menu     -->
     <string name="menu_control_panel">Control panel</string>
     <string name="menu_settings">Settings</string>

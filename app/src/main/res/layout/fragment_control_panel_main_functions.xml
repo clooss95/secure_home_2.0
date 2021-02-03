@@ -21,7 +21,7 @@
             <com.bonacode.securehome.ui.views.ButtonAction
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.startAlarmNormal()}"
+                android:onClick="@{() -> viewModel.startAlarmNormalClicked()}"
                 app:buttonActionIcon="@drawable/ic_lock_simple"
                 app:buttonActionLabel="@string/sms_action_type_start_alarm"
                 />
@@ -29,7 +29,7 @@
             <com.bonacode.securehome.ui.views.ButtonAction
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.stopAlarm()}"
+                android:onClick="@{() -> viewModel.stopAlarmClicked()}"
                 app:buttonActionIcon="@drawable/ic_unlock"
                 app:buttonActionLabel="@string/sms_action_type_stop_alarm"
                 />
@@ -37,7 +37,7 @@
             <com.bonacode.securehome.ui.views.ButtonAction
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.startAlarmHome()}"
+                android:onClick="@{() -> viewModel.startAlarmHomeClicked()}"
                 app:buttonActionIcon="@drawable/ic_lock_simple"
                 app:buttonActionLabel="@string/sms_action_type_start_alarm_home"
                 />
@@ -45,7 +45,7 @@
             <com.bonacode.securehome.ui.views.ButtonAction
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.startAlarmGroup()}"
+                android:onClick="@{() -> viewModel.startAlarmGroupClicked()}"
                 app:buttonActionIcon="@drawable/ic_lock_simple"
                 app:buttonActionLabel="@string/sms_action_type_start_alarm_group"
                 />

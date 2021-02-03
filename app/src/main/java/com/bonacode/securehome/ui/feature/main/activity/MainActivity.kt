@@ -10,11 +10,11 @@ import androidx.navigation.ui.NavigationUI
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.input.input
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.ViewModelActivity
-import com.bonacode.securehome.application.smscommunication.SmsSendResult
+import com.bonacode.securehome.architecture.mvvm.ViewModelActivity
 import com.bonacode.securehome.databinding.ActivityMainBinding
 import com.bonacode.securehome.domain.feature.action.model.ActionModel
 import com.bonacode.securehome.domain.feature.action.model.ActionSentEvent
+import com.bonacode.securehome.domain.feature.action.model.SmsSendResult
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 

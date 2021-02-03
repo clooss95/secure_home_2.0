@@ -25,49 +25,78 @@ class ControlPanelLineFunctionsViewModel @ViewModelInject constructor(
     canSaveFavouriteAction: CanSaveFavouriteAction,
     saveFavouriteActionCallback: SaveFavouriteActionCallback,
     saveFavouriteAction: SaveFavouriteAction
-) : ControlPanelSectionViewModel(savedStateHandle, saveFavouriteAction, canSaveFavouriteAction, saveFavouriteActionCallback) {
+) : ControlPanelSectionViewModel(
+    savedStateHandle,
+    saveFavouriteAction,
+    canSaveFavouriteAction,
+    saveFavouriteActionCallback
+) {
 
-    fun blockLine() {
+    fun blockLineClicked() {
         selectLineAndProcessAction { line ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildBlockLineAction.invoke(
-                                BuildBlockLineAction.Params(line)
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processBlockLineAddToFavourite(line)
             } else {
-                viewModelScope.launch {
-                    val action = blockLine.invoke(BlockLine.Params(line = line))
-                    actionSentCallback.actionSent(action.second, ActionSentCallback.ActionSentSource.CONTROL_PANEL, action.first)
-                }
+                processBlockLineCommand(line)
             }
         }
     }
 
-    fun unblockLine() {
+    fun unblockLineClicked() {
         selectLineAndProcessAction { line ->
             if (isInAddToFavouriteMode) {
-                askForActionNameAndSaveFavouriteAction { actionName ->
-                    viewModelScope.launch {
-                        saveFavouriteAction(
-                            buildUnblockLineAction.invoke(
-                                BuildUnblockLineAction.Params(line)
-                            ), actionName
-                        )
-                        navigateBack()
-                    }
-                }
+                processUnblockLineAddToFavourite(line)
             } else {
-                viewModelScope.launch {
-                    val action = unblockLine.invoke(UnblockLine.Params(line = line))
-                    actionSentCallback.actionSent(action.second, ActionSentCallback.ActionSentSource.CONTROL_PANEL, action.first)
-                }
+                processUnblockLineCommand(line)
             }
+        }
+    }
+
+    private fun processBlockLineAddToFavourite(line: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildBlockLineAction.invoke(
+                        BuildBlockLineAction.Params(line)
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processBlockLineCommand(line: Int) {
+        viewModelScope.launch {
+            val action = blockLine.invoke(BlockLine.Params(line = line))
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
+        }
+    }
+
+    private fun processUnblockLineAddToFavourite(line: Int) {
+        askForActionNameAndSaveFavouriteAction { actionName ->
+            viewModelScope.launch {
+                saveFavouriteAction(
+                    buildUnblockLineAction.invoke(
+                        BuildUnblockLineAction.Params(line)
+                    ), actionName
+                )
+                navigateBack()
+            }
+        }
+    }
+
+    private fun processUnblockLineCommand(line: Int) {
+        viewModelScope.launch {
+            val action = unblockLine.invoke(UnblockLine.Params(line = line))
+            actionSentCallback.actionSent(
+                action.second,
+                ActionSentCallback.ActionSentSource.CONTROL_PANEL,
+                action.first
+            )
         }
     }
 }

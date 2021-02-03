@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.bonacode.securehome.R
-import com.bonacode.securehome.application.architecture.mvvm.BaseViewModel
-import com.bonacode.securehome.application.architecture.navigation.NavigationAction
+import com.bonacode.securehome.architecture.mvvm.BaseViewModel
+import com.bonacode.securehome.architecture.navigation.NavigationAction
 import com.bonacode.securehome.domain.common.invoke
 import com.bonacode.securehome.domain.feature.action.usecase.SendDefaultAction
 import com.bonacode.securehome.domain.feature.favouriteaction.usecase.DisableFavouriteAction
