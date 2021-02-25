@@ -10,7 +10,8 @@ class SetupIntroViewModel @ViewModelInject constructor() : BaseViewModel() {
     fun navigateForward() {
         handleNavigationAction(
             NavigationAction.NavigateTo(
-            R.id.action_setupIntroFragment_to_setupEnterPhoneNumberFragment
-        ))
+                R.id.action_setupIntroFragment_to_setupEnterPhoneNumberFragment
+            )
+        )
     }
 }

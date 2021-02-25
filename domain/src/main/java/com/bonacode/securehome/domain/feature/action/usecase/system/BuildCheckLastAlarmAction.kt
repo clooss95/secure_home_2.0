@@ -14,7 +14,8 @@ class BuildCheckLastAlarmAction @Inject constructor(
     override val actionType: ActionType = ActionType.CHECK_LAST_ALARM
 
     override suspend fun invoke(params: Unit): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .checkLastAlarm()
     )
 }

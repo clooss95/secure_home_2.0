@@ -14,7 +14,8 @@ class BuildStartAlarmPartitionAction @Inject constructor(
     override val actionType: ActionType = ActionType.START_ALARM_PARTITION
 
     override suspend fun invoke(params: Params): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .startAlarmPartition(params.partition)
     )
 

@@ -42,8 +42,10 @@ class MainActivity : ViewModelActivity<MainViewModel, ActivityMainBinding>(
     }
 
     override fun onSupportNavigateUp(): Boolean =
-        (NavigationUI.navigateUp(navController, appBarConfiguration) ||
-                super.onSupportNavigateUp())
+        (
+            NavigationUI.navigateUp(navController, appBarConfiguration) ||
+                super.onSupportNavigateUp()
+            )
 
     override fun subscribe() {
         viewModel.showActionSentEvent.observe(this) {

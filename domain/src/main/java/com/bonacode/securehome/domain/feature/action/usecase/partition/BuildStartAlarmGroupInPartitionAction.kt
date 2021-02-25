@@ -14,7 +14,8 @@ class BuildStartAlarmGroupInPartitionAction @Inject constructor(
     override val actionType: ActionType = ActionType.START_ALARM_GROUP_IN_PARTITION
 
     override suspend fun invoke(params: Params): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .startAlarmGroupInPartition(params.group, params.partition)
     )
 

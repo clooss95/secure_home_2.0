@@ -58,7 +58,8 @@ class ControlPanelLineFunctionsViewModel @ViewModelInject constructor(
                 saveFavouriteAction(
                     buildBlockLineAction.invoke(
                         BuildBlockLineAction.Params(line)
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }
@@ -82,7 +83,8 @@ class ControlPanelLineFunctionsViewModel @ViewModelInject constructor(
                 saveFavouriteAction(
                     buildUnblockLineAction.invoke(
                         BuildUnblockLineAction.Params(line)
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }

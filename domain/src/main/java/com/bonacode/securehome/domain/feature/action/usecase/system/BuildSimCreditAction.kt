@@ -14,7 +14,8 @@ class BuildSimCreditAction @Inject constructor(
     override val actionType: ActionType = ActionType.CHECK_SIM_CREDIT
 
     override suspend fun invoke(params: Unit): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .checkSimCredit()
     )
 }

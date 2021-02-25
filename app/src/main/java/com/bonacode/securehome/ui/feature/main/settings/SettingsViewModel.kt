@@ -37,11 +37,11 @@ class SettingsViewModel @ViewModelInject constructor(
         applicationPinCode
     ) { phoneNumber, pinCode, protectApplicationViaPin, applicationPinCode ->
         (phoneNumber?.isValidPhoneNumber() ?: false) && (pinCode?.isAlarmPinCodeValid() ?: false) &&
-                if (protectApplicationViaPin == true) {
-                    applicationPinCode?.isApplicationPinCodeValid() ?: false
-                } else {
-                    true
-                }
+            if (protectApplicationViaPin == true) {
+                applicationPinCode?.isApplicationPinCodeValid() ?: false
+            } else {
+                true
+            }
     }
 
     init {

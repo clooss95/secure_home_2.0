@@ -141,7 +141,8 @@ class ControlPanelMainFunctionsViewModel @ViewModelInject constructor(
                 saveFavouriteAction(
                     buildStartAlarmGroupAction.invoke(
                         BuildStartAlarmGroupAction.Params(group)
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }

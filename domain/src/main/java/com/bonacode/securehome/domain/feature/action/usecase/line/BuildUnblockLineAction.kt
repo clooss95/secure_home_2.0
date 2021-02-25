@@ -14,7 +14,8 @@ class BuildUnblockLineAction @Inject constructor(
     override val actionType: ActionType = ActionType.UNBLOCK_LINE
 
     override suspend fun invoke(params: Params): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .unblockLine(params.line)
     )
 

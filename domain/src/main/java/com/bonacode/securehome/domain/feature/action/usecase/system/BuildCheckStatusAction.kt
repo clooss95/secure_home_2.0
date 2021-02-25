@@ -14,7 +14,8 @@ class BuildCheckStatusAction @Inject constructor(
     override val actionType: ActionType = ActionType.CHECK_SYSTEM_STATUS
 
     override suspend fun invoke(params: Unit): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .checkSystemStatus()
     )
 }

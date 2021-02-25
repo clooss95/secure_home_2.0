@@ -1,5 +1,6 @@
 package com.bonacode.securehome.ui.feature.main.activity
 
+import android.content.Context
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LiveData
@@ -23,13 +24,18 @@ import com.bonacode.securehome.ui.feature.main.activity.callback.ActionSentCallb
 import com.bonacode.securehome.ui.feature.main.activity.callback.PinCodeEnteredCallback
 import com.bonacode.securehome.ui.feature.main.activity.callback.SaveFavouriteActionCallback
 import com.bonacode.securehome.ui.feature.setup.enterpincode.isApplicationPinCodeValid
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 
 class MainViewModel @ViewModelInject constructor(
     private val saveFavouriteAction: SaveFavouriteAction,
     private val getSettings: GetSettings,
-    private val canSaveFavouriteAction: CanSaveFavouriteAction
-) : BaseViewModel(), ActionSentCallback, PinCodeEnteredCallback, SaveFavouriteActionCallback,
+    private val canSaveFavouriteAction: CanSaveFavouriteAction,
+    @ApplicationContext private val context: Context
+) : BaseViewModel(),
+    ActionSentCallback,
+    PinCodeEnteredCallback,
+    SaveFavouriteActionCallback,
     PinTextChangedCallback {
 
     val pinCode = MutableLiveData("")
@@ -108,7 +114,7 @@ class MainViewModel @ViewModelInject constructor(
                 _showEnterPinCodeView.postValue(false)
                 hideKeyboard()
             } else {
-                getString(R.string.wrong_pin) { text -> _pinErrorText.postValue(text) }
+                _pinErrorText.postValue(context.getString(R.string.wrong_pin))
                 if (_pinErrorText.value?.isNotEmpty() == true) {
                     pinCode.postValue("")
                 }

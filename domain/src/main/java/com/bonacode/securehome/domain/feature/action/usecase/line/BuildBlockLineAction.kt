@@ -14,7 +14,8 @@ class BuildBlockLineAction @Inject constructor(
     override val actionType: ActionType = ActionType.BLOCK_LINE
 
     override suspend fun invoke(params: Params): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .blockLine(params.line)
     )
 

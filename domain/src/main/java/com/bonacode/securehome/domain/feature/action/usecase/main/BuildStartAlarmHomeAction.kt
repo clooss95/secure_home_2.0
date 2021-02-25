@@ -14,7 +14,8 @@ class BuildStartAlarmHomeAction @Inject constructor(
     override val actionType: ActionType = ActionType.START_ALARM_HOME
 
     override suspend fun invoke(params: Unit): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .startAlarmHome()
     )
 }

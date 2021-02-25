@@ -14,7 +14,8 @@ class BuildStopAlarmAction @Inject constructor(
     override val actionType: ActionType = ActionType.STOP_ALARM
 
     override suspend fun invoke(params: Unit): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .stopAlarm()
     )
 }

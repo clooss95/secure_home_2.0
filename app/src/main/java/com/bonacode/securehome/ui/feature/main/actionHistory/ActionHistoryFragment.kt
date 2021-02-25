@@ -22,7 +22,7 @@ import com.bonacode.securehome.architecture.mvvm.ViewModelFragment
 import com.bonacode.securehome.databinding.FragmentActionHistoryBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.util.*
+import java.util.Calendar
 
 @AndroidEntryPoint
 class ActionHistoryFragment :

@@ -39,9 +39,11 @@ class GetHomeList @Inject constructor(
             )
 
             // adds favourite actions
-            result.addAll(favourites.map { favourite ->
-                HomeItemModel.Favourite(favourite)
-            })
+            result.addAll(
+                favourites.map { favourite ->
+                    HomeItemModel.Favourite(favourite)
+                }
+            )
 
             result
         }

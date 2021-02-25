@@ -29,7 +29,6 @@ abstract class ViewModelActivity<VM : BaseViewModel, B : ViewDataBinding>(
         setupLifecycleObservers()
         observeNavigationEvent(navigator)
         observeHideKeyboardEvent { hideKeyboard() }
-        observeGetStringEvent(this)
         initViews()
         subscribe()
     }
@@ -39,7 +38,6 @@ abstract class ViewModelActivity<VM : BaseViewModel, B : ViewDataBinding>(
         destroyLifecycleObservers()
         destroyBinding()
         disposeHideKeyboardEvent()
-        disposeGetStringEvent()
         unsubscribe()
         super.onDestroy()
     }

@@ -28,9 +28,12 @@ class HomeFragment : ViewModelFragment<HomeViewModel, FragmentHomeBinding>() {
             viewModel.sendAction(action)
         }
 
-        val swipeHandler = object : SwipeToDeleteCallback(requireContext(), {
-            it is HomeAdapter.FavouriteActionViewHolder
-        }) {
+        val swipeHandler = object : SwipeToDeleteCallback(
+            requireContext(),
+            {
+                it is HomeAdapter.FavouriteActionViewHolder
+            }
+        ) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 if (viewHolder is HomeAdapter.FavouriteActionViewHolder) {
                     viewHolder.getFavouriteActionId()?.let {

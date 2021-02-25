@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.bonacode.securehome.architecture.base.BaseFragment
 
-abstract class ViewModelFragment<VM : BaseViewModel, B : ViewDataBinding> : BaseFragment(),
+abstract class ViewModelFragment<VM : BaseViewModel, B : ViewDataBinding> :
+    BaseFragment(),
     ViewModelBindingAware<VM, B> {
 
     override var binding: B? = null
@@ -42,7 +43,6 @@ abstract class ViewModelFragment<VM : BaseViewModel, B : ViewDataBinding> : Base
         setupBinding()
         observeNavigationEvent(navigator)
         observeHideKeyboardEvent { hideKeyboard() }
-        observeGetStringEvent(requireContext())
         initViews()
         subscribe()
     }
@@ -57,7 +57,6 @@ abstract class ViewModelFragment<VM : BaseViewModel, B : ViewDataBinding> : Base
         disposeNavigationEvent()
         destroyBinding()
         disposeHideKeyboardEvent()
-        disposeGetStringEvent()
         super.onDestroyView()
     }
 }

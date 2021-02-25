@@ -88,7 +88,8 @@ class ControlPanelPartitionFunctionsViewModel @ViewModelInject constructor(
                 saveFavouriteAction(
                     buildStartAlarmPartitionAction.invoke(
                         BuildStartAlarmPartitionAction.Params(partition)
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }
@@ -116,7 +117,8 @@ class ControlPanelPartitionFunctionsViewModel @ViewModelInject constructor(
                 saveFavouriteAction(
                     buildStartAlarmPartitionHomeAction.invoke(
                         BuildStartAlarmPartitionHomeAction.Params(partition)
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }
@@ -141,7 +143,8 @@ class ControlPanelPartitionFunctionsViewModel @ViewModelInject constructor(
                 saveFavouriteAction(
                     buildStartAlarmGroupInPartitionAction.invoke(
                         BuildStartAlarmGroupInPartitionAction.Params(group, partition)
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }
@@ -172,7 +175,8 @@ class ControlPanelPartitionFunctionsViewModel @ViewModelInject constructor(
                         BuildStopAlarmPartitionAction.Params(
                             partition
                         )
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }

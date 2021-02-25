@@ -14,7 +14,8 @@ class BuildInactivateEntryAction @Inject constructor(
     override val actionType: ActionType = ActionType.INACTIVATE_ENTRY
 
     override suspend fun invoke(params: Params): ActionModel = BaseActionModel(
-        actionType, actionCommandBuilderProvider.provideActionCommandBuilder()
+        actionType,
+        actionCommandBuilderProvider.provideActionCommandBuilder()
             .inactivateEntry(params.entry)
     )
 

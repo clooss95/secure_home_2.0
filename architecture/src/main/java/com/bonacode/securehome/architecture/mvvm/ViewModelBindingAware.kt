@@ -1,6 +1,5 @@
 package com.bonacode.securehome.architecture.mvvm
 
-import android.content.Context
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LifecycleOwner
 import com.bonacode.securehome.architecture.BR
@@ -35,11 +34,14 @@ internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM,
 internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM, B>.observeHideKeyboardEvent(
     hideKeyboardCallback: () -> Unit
 ) {
-    viewModel.hideKeyboardEvent.observe(this, { event ->
-        event?.getContentIfNotHandled()?.let {
-            hideKeyboardCallback()
+    viewModel.hideKeyboardEvent.observe(
+        this,
+        { event ->
+            event?.getContentIfNotHandled()?.let {
+                hideKeyboardCallback()
+            }
         }
-    })
+    )
 }
 
 internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM, B>.disposeHideKeyboardEvent() {
@@ -49,25 +51,16 @@ internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM,
 internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM, B>.observeNavigationEvent(
     navigator: Navigator
 ) {
-    viewModel.navigationEvent.observe(this, { event ->
-        event?.getContentIfNotHandled()?.let { action ->
-            navigator.handleNavigationAction(action)
+    viewModel.navigationEvent.observe(
+        this,
+        { event ->
+            event?.getContentIfNotHandled()?.let { action ->
+                navigator.handleNavigationAction(action)
+            }
         }
-    })
-}
-
-internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM, B>.observeGetStringEvent(context: Context) {
-    viewModel.getStringEvent.observe(this, { event ->
-        event?.getContentIfNotHandled()?.let { it ->
-            it.second.invoke(context.getString(it.first))
-        }
-    })
+    )
 }
 
 internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM, B>.disposeNavigationEvent() {
     viewModel.navigationEvent.removeObservers(this)
-}
-
-internal fun <VM : BaseViewModel, B : ViewDataBinding> ViewModelBindingAware<VM, B>.disposeGetStringEvent() {
-    viewModel.getStringEvent.removeObservers(this)
 }

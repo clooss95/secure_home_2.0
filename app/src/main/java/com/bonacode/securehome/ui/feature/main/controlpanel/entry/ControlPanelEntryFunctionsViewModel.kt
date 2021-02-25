@@ -60,7 +60,8 @@ class ControlPanelEntryFunctionsViewModel @ViewModelInject constructor(
                         BuildActivateEntryAction.Params(
                             entry
                         )
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }
@@ -84,7 +85,8 @@ class ControlPanelEntryFunctionsViewModel @ViewModelInject constructor(
                 saveFavouriteAction(
                     buildInactivateEntryAction.invoke(
                         BuildInactivateEntryAction.Params(entry)
-                    ), actionName
+                    ),
+                    actionName
                 )
                 navigateBack()
             }
